@@ -2,12 +2,15 @@ from datetime import date
 
 class data:
 
+    count = 0
+
     def __init__(self , name ,age ):
         self.name = name
         self.age = age
 
     def _detail(self):
-        return f'{self.name} is of {self.age}'
+        count+=1
+        return f'{self.name} is of {self.age}, {count}'
 
 
     @classmethod

@@ -1,39 +1,39 @@
-def theFunc ():
-    print("That the inside function")
+# def theFunc ():
+#     print("That the inside function")
 
-def theDecorator(theFunc):
-    print("WELCOME HERE!!!!")
-    theFunc()
-    print("Thanks!")
+# def theDecorator(theFunc):
+#     print("WELCOME HERE!!!!")
+#     theFunc()
+#     print("Thanks!")
 
-theDecorator(theFunc)()
-
-
-def theDecorator(theFunc):
-    print("WELCOME HERE!!!!")
-    theFunc()
-    print("Thanks!")
-
-@theDecorator
-def theFunc ():
-    print("That the inside function")
-
-theFunc()
+# theDecorator(theFunc)()
 
 
-def decorator(f):
-    def newFunc():
-        print("Start!!!!")
-        f()
+# def theDecorator(theFunc):
+#     print("WELCOME HERE!!!!")
+#     theFunc()
+#     print("Thanks!")
 
-    return newFunc()
+# @theDecorator
+# def theFunc ():
+#     print("That the inside function")
 
-@decorator
-def initial():
-    print("continue")
+# theFunc()
 
 
-initial()
+# def decorator(f):
+#     def newFunc():
+#         print("Start!!!!")
+#         f()
+
+#     return newFunc()
+
+# @decorator
+# def initial():
+#     print("continue")
+
+
+# initial()
 
 
 # - Decorators (Write custom decorators), Class Based Decorators
@@ -63,8 +63,8 @@ class MyClass:
         print("I'm repeating")
 
 
-obj = MyClass()
-obj.Func()
+# obj = MyClass()
+# obj.Func()
 
 
 #     2. Timing Decorator:
@@ -75,9 +75,9 @@ import time
 
 class Timing:
     def timing(self, func):
-        def wrapper(*args, **kwargs):
+        def wrapper(*args):
             start = time.time()
-            func(*args, **kwargs)
+            func(*args)
             end = time.time()
             execution_time = end - start
             print(f"Execution time: {execution_time}")
@@ -109,8 +109,8 @@ obj.div(340, 45)
 
 class converter:
     def uppercase_decorator (self, string):
-        def wrapper(instance, *args, **kwargs):
-            strToConvert = string(instance, *args, **kwargs)
+        def wrapper(*args):
+            strToConvert = string(*args)
             res = strToConvert.upper()
             print(f"String to upper case: {res}")
         return wrapper
@@ -126,4 +126,4 @@ class StringToConvert:
 
 
 obj = StringToConvert()
-obj.string("saima")
+obj.string("saimA")

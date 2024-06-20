@@ -1,8 +1,11 @@
+#built-in context manager
 with open("title.txt" , "w") as f:
     f.write("123")
 
 print(f.closed)
 
+
+#createing a context manager
 class Manager():
 
     def __init__(self , fileName , fileMode):

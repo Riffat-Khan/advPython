@@ -2,22 +2,22 @@ from io import StringIO
 
 string = "Hey!! Welcome to the fictional life"
 
-file = StringIO(string)
+fileStr = StringIO(string)
 
-print(file.read())
+print(fileStr.read())
 
-file.write("\nWhat're you gonna write here?")
+fileStr.write("\nWhat're you gonna write here?")
 
-file.seek(0)
+fileStr.seek(0)
 
-print(file.getvalue())
+print(fileStr.getvalue())
 
-print(file.writable())
-print(file.readable())
+print(fileStr.writable())
+print(fileStr.readable())
 
-print(file.tell())
+print(fileStr.tell())
 
-file.truncate(30)
-print(file.read())
+fileStr.truncate(30)
+print(fileStr.read())
 
-print(file.tell())
+print(fileStr.tell())
